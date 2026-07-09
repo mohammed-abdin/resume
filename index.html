@@ -1,270 +1,490 @@
-<!-- rebuild_id: 105 -->
+---
+render_with_liquid: false
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mohammed Abdin - Resume</title>
+  <title>Mohammed Abdin - Senior BIE Resume</title>
   <style>
-    /* Absolute Reset to eliminate browser drift */
-    html, body, div, h1, h2, h3, p, ul, li {
+    /* Premium CSS Variables for Modern Palette */
+    :root {
+      --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      --text-main: #1e293b;       /* Deep Slate */
+      --text-muted: #475569;      /* Cool Gray */
+      --accent-blue: #3b82f6;     /* Tech Indigo */
+      --accent-glow: rgba(59, 130, 246, 0.08);
+      --border-color: #e2e8f0;    /* Soft Light Gray */
+      --card-bg: #ffffff;
+    }
+
+    /* Strict Reset */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      border: 0;
-      font-size: 100%;
-      font: inherit;
-      vertical-align: baseline;
     }
-    
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-      line-height: 1.55;
-      color: #222222;
-      background-color: #ffffff;
-      max-width: 800px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-main);
+      background: var(--bg-gradient);
+      min-height: 100vh;
+      padding: 60px 20px;
+    }
+
+    /* Container Canvas */
+    .resume-canvas {
+      max-width: 850px;
       margin: 0 auto;
-      padding: 40px 20px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 50px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
     }
 
-    /* Traditional Minimal Header */
-    .header-container {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-    .header-container h1 {
-      font-size: 28px;
-      font-weight: 700;
-      color: #111111;
-      margin-bottom: 4px;
-    }
-    .title-sub {
-      font-size: 15px;
-      font-weight: 600;
-      color: #232f3e;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
-    .contact-info {
-      font-size: 13px;
-      color: #555555;
-    }
-
-    /* Clean Download Link Box */
-    .btn-container {
-      text-align: center;
+    /* Sleek Header Section */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #f1f5f9;
+      padding-bottom: 30px;
       margin-bottom: 30px;
     }
-    .download-link {
-      display: inline-flex;
-      align-items: center;
-      color: #232f3e;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 600;
-      padding: 8px 16px;
-      border: 1px solid #dddddd;
-      border-radius: 4px;
-      background-color: #fafafa;
-      transition: all 0.2s ease;
+    .header-left h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.75px;
+      color: var(--text-main);
+      line-height: 1.2;
     }
-    .download-link:hover {
-      background-color: #f0f2f5;
-      border-color: #232f3e;
+    .header-left .title-sub {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--accent-blue);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-top: 6px;
+    }
+    .contact-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+      font-size: 13.5px;
+      color: var(--text-muted);
+      gap: 4px;
+    }
+    .contact-grid span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    /* Traditional Section Divider Accents */
+    /* Premium Download Button */
+    .action-bar {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      background-color: var(--text-main);
+      color: #ffffff !important;
+      padding: 10px 20px;
+      font-size: 13.5px;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 12px rgba(30, 41, 59, 0.12);
+      border: 1px solid transparent;
+    }
+    .download-btn:hover {
+      background-color: var(--accent-blue);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(59, 130, 246, 0.24);
+    }
+    .download-btn svg {
+      margin-right: 8px;
+      fill: currentColor;
+    }
+
+    /* Headers */
     h2 {
       font-size: 14px;
       font-weight: 700;
-      color: #232f3e;
+      color: var(--text-main);
       text-transform: uppercase;
       letter-spacing: 1.5px;
-      border-bottom: 1px solid #111111;
-      padding-bottom: 4px;
-      margin-top: 30px;
-      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 35px;
+      margin-bottom: 16px;
+    }
+    h2::after {
+      content: '';
+      flex-grow: 1;
+      height: 1px;
+      background-color: var(--border-color);
     }
 
     .summary-text {
-      font-size: 13.5px;
-      color: #333333;
+      font-size: 14.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
       text-align: justify;
     }
 
-    /* Experience Grid Structures */
+    /* Technical Skills Pill Badges */
+    .skills-group {
+      margin-bottom: 15px;
+    }
+    .skills-group h4 {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-main);
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .skills-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .skill-badge {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: var(--text-muted);
+      font-size: 12px;
+      font-weight: 550;
+      padding: 4px 10px;
+      border-radius: 6px;
+      transition: all 0.15s ease;
+    }
+    .skill-badge:hover {
+      background-color: var(--accent-glow);
+      border-color: var(--accent-blue);
+      color: var(--accent-blue);
+    }
+
+    /* Timeline Professional Experience styling */
+    .timeline {
+      position: relative;
+      padding-left: 20px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 5px;
+      bottom: 5px;
+      width: 2px;
+      background-color: var(--border-color);
+    }
     .job-block {
-      margin-bottom: 20px;
+      position: relative;
+      margin-bottom: 30px;
+    }
+    .job-block::before {
+      content: '';
+      position: absolute;
+      left: -24px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--accent-blue);
+      border: 2px solid var(--card-bg);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+      transition: background-color 0.2s ease;
+    }
+    .job-block:hover::before {
+      background-color: var(--text-main);
     }
     .job-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
     }
     .job-header h3 {
-      font-size: 14.5px;
+      font-size: 16px;
       font-weight: 700;
-      color: #111111;
+      color: var(--text-main);
     }
     .job-location {
-      font-size: 13px;
-      color: #555555;
-      font-weight: 500;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
     .job-meta {
       font-size: 13px;
-      font-style: italic;
-      color: #555555;
-      margin-bottom: 6px;
+      font-weight: 500;
+      color: var(--accent-blue);
+      margin-bottom: 10px;
     }
 
-    /* Bullet Alignments */
+    /* Lists styling */
     ul {
-      font-size: 13.5px;
-      padding-left: 20px;
-      color: #333333;
-      list-style-type: disc;
-      margin-bottom: 15px;
+      font-size: 14px;
+      padding-left: 16px;
+      color: var(--text-muted);
+      list-style-type: square;
     }
     li {
       margin-bottom: 6px;
-      line-height: 1.55;
-    }
-    strong {
-      color: #111111;
-      font-weight: 600;
+      line-height: 1.6;
     }
 
-    /* Adaptive Mobile Sizing */
-    @media (max-width: 600px) {
+    /* Education & Certifications Layout */
+    .academic-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .academic-card {
+      background-color: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .academic-card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+    .academic-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Responsive Mobile Sizing */
+    @media (max-width: 768px) {
       body {
-        padding: 20px 15px;
+        padding: 20px 10px;
+      }
+      .resume-canvas {
+        padding: 25px 20px;
+        border-radius: 12px;
+      }
+      .header {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .contact-grid {
+        align-items: flex-start;
+        text-align: left;
       }
       .job-header {
         flex-direction: column;
         align-items: flex-start;
+        gap: 2px;
       }
-      .job-location {
-        margin-top: 1px;
-        margin-bottom: 2px;
+      .academic-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="header-container">
-    <h1>Mohammed Abdin</h1>
-    <p class="title-sub">Senior Business Intelligence Engineer</p>
-    <p class="contact-info">San Jose, CA &nbsp;|&nbsp; +1(408) 834-6864 &nbsp;|&nbsp; moh.yasser27@gmail.com</p>
-  </div>
-
-  <div class="btn-container">
-    <a href="Mohammed_Abdin_Resume.pdf" download="Mohammed_Abdin_Resume.pdf" class="download-link">
-      <svg width="12" height="12" viewBox="0 0 24 24" style="margin-right: 6px; fill: currentColor; vertical-align: middle;">
+  <!-- Rebuild Action Anchor -->
+  <div class="action-bar">
+    <a href="Mohammed_Abdin_Resume.pdf" download="Mohammed_Abdin_Resume.pdf" class="download-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24">
         <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
       </svg>
       Download Traditional PDF Resume
     </a>
   </div>
 
-  <h2>Professional Summary</h2>
-  <p class="summary-text">Senior Business Intelligence Engineer with 6+ years of experience translating complex data into strategic business solutions. Proven track record of owning entire analytical pipelines, from scalable data warehousing and multi-tier Medallion architectures to executive-level business dashboards. Skilled in robust dimensional data modeling, implementing end-to-end data quality frameworks, and leveraging agentic AI tools like Claude Code to accelerate pipeline development and boost developer productivity. Adept at bridging the gap between technical infrastructure and stakeholder requirements to drive data accuracy and accessibility across the organization.</p>
+  <div class="resume-canvas">
 
-  <h2>Technical Skills</h2>
-  <ul>
-    <li><strong>Business Intelligence & Analytics:</strong> Tableau, Power BI, Looker Studio, Streamlit, Executive Dashboards, Command Centers, Key Performance Indicators (KPIs), Variance Tracking, Statistical Analysis (Black Belt Six Sigma), Risk and Operational Mitigation Modeling.</li>
-    <li><strong>Data Engineering & Architecture:</strong> SQL and Database Programming, Data Warehousing (AWS Redshift, Snowflake, Databricks), Medallion Architecture (Bronze, Silver, Gold stages), Dimensional Data Modeling (Star and Snowflake Schemas), ETL and ELT Pipeline Design (DBT, AWS Glue, Spark, PySpark), Data Quality, Governance, Scripting Languages (Python, Shell, Git).</li>
-    <li><strong>Productivity & AI Tools:</strong> Claude Code, Agentic Coding Workflows, Prompt Engineering, Automated Unit Testing, CI/CD Deployment Pipelines.</li>
-  </ul>
-
-  <h2>Professional Experience</h2>
-
-  <div class="job-block">
-    <div class="job-header">
-      <h3>Amazon</h3>
-      <span class="job-location">Palo Alto, CA</span>
+    <!-- Contact Header Structure -->
+    <div class="header">
+      <div class="header-left">
+        <h1>Mohammed Abdin</h1>
+        <p class="title-sub">Senior Business Intelligence Engineer</p>
+      </div>
+      <div class="contact-grid">
+        <span>San Jose, CA</span>
+        <span>+1 (408) 834-6864</span>
+        <span>moh.yasser27@gmail.com</span>
+      </div>
     </div>
-    <p class="job-meta">Business Intelligence Engineer, Data Engineering | October 2024 to Current</p>
-    <ul>
-      <li>Integrated Claude Code into local development environments to automate boilerplate Python scripting and complex SQL syntax generation, accelerating developer velocity and reducing pipeline development-to-production cycles by 35%.</li>
-      <li>Architected and implemented modular ETL pipelines using a Medallion Architecture (Bronze, Silver, Gold stages) to streamline raw data processing into high-performance analytical layers.</li>
-      <li>Designed and optimized dimensional data models in Redshift, utilizing star schemas to support executive reporting and drastically improve query execution times.</li>
-      <li>Engineered a serverless data architecture using AWS S3, Glue, and Athena that automated data workflows, reducing processing time by 60% and empowering senior leadership with real-time, self-service analytics to identify operational anomalies.</li>
-      <li>Developed a PySpark data quality testing framework with Great Expectations, establishing automated risk controls and programmatic anomaly detection that reduced reporting defects by 90%.</li>
-      <li>Led the migration of legacy reporting systems to AWS cloud infrastructure, achieving 99.9% system availability and a 50% cost reduction.</li>
-      <li>Mentored 3 junior BIEs/DEs on AWS best practices and BI development standards, accelerating team delivery velocity and technical excellence.</li>
-    </ul>
-  </div>
 
-  <div class="job-block">
-    <div class="job-header">
-      <h3>Meta</h3>
-      <span class="job-location">Sunnyvale, CA</span>
+    <h2>Professional Summary</h2>
+    <p class="summary-text">Senior Business Intelligence Engineer with 6+ years of experience translating complex data into strategic business solutions. Proven track record of owning entire analytical pipelines, from scalable data warehousing and multi-tier Medallion architectures to executive-level business dashboards. Skilled in robust dimensional data modeling, implementing end-to-end data quality frameworks, and leveraging agentic AI tools like Claude Code to accelerate pipeline development and boost developer productivity. Adept at bridging the gap between technical infrastructure and stakeholder requirements to drive data accuracy and accessibility across the organization.</p>
+
+    <h2>Technical Skills</h2>
+    <div class="skills-group">
+      <h4>Business Intelligence & Analytics</h4>
+      <div class="skills-flex">
+        <span class="skill-badge">Tableau</span>
+        <span class="skill-badge">Power BI</span>
+        <span class="skill-badge">Looker Studio</span>
+        <span class="skill-badge">Streamlit</span>
+        <span class="skill-badge">Executive Dashboards</span>
+        <span class="skill-badge">Command Centers</span>
+        <span class="skill-badge">KPI Variance Tracking</span>
+        <span class="skill-badge">Six Sigma (Black Belt)</span>
+        <span class="skill-badge">Mitigation Modeling</span>
+      </div>
     </div>
-    <p class="job-meta">Data Engineer, Analytics | September 2022 to October 2024</p>
-    <ul>
-      <li>Drove a 25% reduction in ETL processing time and operational overhead through the design and implementation of modern data pipelines in AWS, Snowflake, and DBT.</li>
-      <li>Designed and implemented highly scalable dimensional data models in Snowflake, enforcing rigorous data quality rules and reducing downstream storage overhead by 25%.</li>
-      <li>Analyzed source data to establish automated data quality strategies, reducing analytical reporting errors and data inconsistencies by 30%.</li>
-      <li>Partnered with cross-functional teams to build comprehensive data dictionaries and standards, aligning metrics and improving data reliability across the organization.</li>
-      <li>Designed and launched executive-level Tableau and Power BI command dashboards, enabling VPs and stakeholders to proactively track critical variance metrics and mitigate high-priority operational risks.</li>
-    </ul>
-  </div>
 
-  <div class="job-block">
-    <div class="job-header">
-      <h3>Tesla</h3>
-      <span class="job-location">Fremont, CA</span>
+    <div class="skills-group">
+      <h4>Data Engineering & Architecture</h4>
+      <div class="skills-flex">
+        <span class="skill-badge">SQL</span>
+        <span class="skill-badge">AWS Redshift</span>
+        <span class="skill-badge">Snowflake</span>
+        <span class="skill-badge">Databricks</span>
+        <span class="skill-badge">Medallion Architecture</span>
+        <span class="skill-badge">Dimensional Modeling</span>
+        <span class="skill-badge">Star Schemas</span>
+        <span class="skill-badge">DBT</span>
+        <span class="skill-badge">AWS Glue</span>
+        <span class="skill-badge">PySpark</span>
+        <span class="skill-badge">Data Quality</span>
+        <span class="skill-badge">Python</span>
+        <span class="skill-badge">Git</span>
+      </div>
     </div>
-    <p class="job-meta">Analytics Engineer, Cell Manufacturing | April 2020 to September 2022</p>
-    <ul>
-      <li>Built and managed robust batch data pipelines, driving data visibility that directly contributed to a 30% increase in monthly manufacturing yield.</li>
-      <li>Initiated automated ETL and data management solutions that eliminated manual intervention, achieving 75% data automation and reducing operational vulnerabilities.</li>
-      <li>Established automated data quality audits to ensure analytics integrity, reducing data errors and down-time reporting inconsistencies by 20%.</li>
-      <li>Implemented an OLAP cube and semantic layer with over 98% accuracy, reducing business reporting time requirements by 75%.</li>
-      <li>Optimized data capture and replication workflows, achieving a 50% reduction in data duplication.</li>
-    </ul>
-  </div>
 
-  <div class="job-block">
-    <div class="job-header">
-      <h3>Stantec Inc.</h3>
-      <span class="job-location">San Jose, CA</span>
+    <div class="skills-group">
+      <h4>Productivity & AI Tools</h4>
+      <div class="skills-flex">
+        <span class="skill-badge">Claude Code</span>
+        <span class="skill-badge">Agentic Coding Workflows</span>
+        <span class="skill-badge">Prompt Engineering</span>
+        <span class="skill-badge">Automated Unit Testing</span>
+        <span class="skill-badge">CI/CD Pipelines</span>
+      </div>
     </div>
-    <p class="job-meta">Junior Data Engineer | July 2019 to May 2020</p>
-    <ul>
-      <li>Automated data integration workflows to increase transaction tracking efficiency by 25%, empowering teams to accurately track operational trends.</li>
-      <li>Audited source databases to mitigate data quality issues, leading to a 30% drop in reporting inconsistencies.</li>
-      <li>Developed and maintained Snowflake data models to support data warehouse and analytical reporting, enhancing data accessibility by 20%.</li>
-    </ul>
-  </div>
 
-  <div class="job-block">
-    <div class="job-header">
-      <h3>Western Digital</h3>
-      <span class="job-location">San Jose, CA</span>
+    <h2>Professional Experience</h2>
+    <div class="timeline">
+
+      <!-- Amazon Block -->
+      <div class="job-block">
+        <div class="job-header">
+          <h3>Amazon</h3>
+          <span class="job-location">Palo Alto, CA</span>
+        </div>
+        <p class="job-meta">Business Intelligence Engineer, Data Engineering | October 2024 – Current</p>
+        <ul>
+          <li>Integrated Claude Code into local development environments to automate boilerplate Python scripting and complex SQL syntax generation, accelerating developer velocity and reducing pipeline development-to-production cycles by 35%.</li>
+          <li>Architected and implemented modular ETL pipelines using a Medallion Architecture (Bronze, Silver, Gold stages) to streamline raw data processing into high-performance analytical layers.</li>
+          <li>Designed and optimized dimensional data models in Redshift, utilizing star schemas to support executive reporting and drastically improve query execution times.</li>
+          <li>Engineered a serverless data architecture using AWS S3, Glue, and Athena that automated data workflows, reducing processing time by 60% and empowering senior leadership with real-time, self-service analytics to identify operational anomalies.</li>
+          <li>Developed a PySpark data quality testing framework with Great Expectations, establishing automated risk controls and programmatic anomaly detection that reduced reporting defects by 90%.</li>
+          <li>Led the migration of legacy reporting systems to AWS cloud infrastructure, achieving 99.9% system availability and a 50% cost reduction.</li>
+          <li>Mentored 3 junior BIEs/DEs on AWS best practices and BI development standards, accelerating team delivery velocity and technical excellence.</li>
+        </ul>
+      </div>
+
+      <!-- Meta Block -->
+      <div class="job-block">
+        <div class="job-header">
+          <h3>Meta</h3>
+          <span class="job-location">Sunnyvale, CA</span>
+        </div>
+        <p class="job-meta">Data Engineer, Analytics | September 2022 – October 2024</p>
+        <ul>
+          <li>Drove a 25% reduction in ETL processing time and operational overhead through the design and implementation of modern data pipelines in AWS, Snowflake, and DBT.</li>
+          <li>Designed and implemented highly scalable dimensional data models in Snowflake, enforcing rigorous data quality rules and reducing downstream storage overhead by 25%.</li>
+          <li>Analyzed source data to establish automated data quality strategies, reducing analytical reporting errors and data inconsistencies by 30%.</li>
+          <li>Partnered with cross-functional teams to build comprehensive data dictionaries and standards, aligning metrics and improving data reliability across the organization.</li>
+          <li>Designed and launched executive-level Tableau and Power BI command dashboards, enabling VPs and stakeholders to proactively track critical variance metrics and mitigate high-priority operational risks.</li>
+        </ul>
+      </div>
+
+      <!-- Tesla Block -->
+      <div class="job-block">
+        <div class="job-header">
+          <h3>Tesla</h3>
+          <span class="job-location">Fremont, CA</span>
+        </div>
+        <p class="job-meta">Analytics Engineer, Cell Manufacturing | April 2020 – September 2022</p>
+        <ul>
+          <li>Built and managed robust batch data pipelines, driving data visibility that directly contributed to a 30% increase in monthly manufacturing yield.</li>
+          <li>Initiated automated ETL and data management solutions that eliminated manual intervention, achieving 75% data automation and reducing operational vulnerabilities.</li>
+          <li>Established automated data quality audits to ensure analytics integrity, reducing data errors and down-time reporting inconsistencies by 20%.</li>
+          <li>Implemented an OLAP cube and semantic layer with over 98% accuracy, reducing business reporting time requirements by 75%.</li>
+          <li>Optimized data capture and replication workflows, achieving a 50% reduction in data duplication.</li>
+        </ul>
+      </div>
+
+      <!-- Stantec Block -->
+      <div class="job-block">
+        <div class="job-header">
+          <h3>Stantec Inc.</h3>
+          <span class="job-location">San Jose, CA</span>
+        </div>
+        <p class="job-meta">Junior Data Engineer | July 2019 – May 2020</p>
+        <ul>
+          <li>Automated data integration workflows to increase transaction tracking efficiency by 25%, empowering teams to accurately track operational trends.</li>
+          <li>Audited source databases to mitigate data quality issues, leading to a 30% drop in reporting inconsistencies.</li>
+          <li>Developed and maintained Snowflake data models to support data warehouse and analytical reporting, enhancing data accessibility by 20%.</li>
+        </ul>
+      </div>
+
+      <!-- Western Digital Block -->
+      <div class="job-block">
+        <div class="job-header">
+          <h3>Western Digital</h3>
+          <span class="job-location">San Jose, CA</span>
+        </div>
+        <p class="job-meta">Data Analyst Intern | June 2018 – October 2018</p>
+        <ul>
+          <li>Conducted rigorous data cleaning, engineering, and preparation tasks utilizing SQL and Python.</li>
+          <li>Partnered with data engineering teams to scale pipeline architectures, improving baseline data quality and user accessibility.</li>
+        </ul>
+      </div>
+
     </div>
-    <p class="job-meta">Data Analyst Intern | June 2018 to October 2018</p>
-    <ul>
-      <li>Conducted rigorous data cleaning, engineering, and preparation tasks utilizing SQL and Python.</li>
-      <li>Partnered with data engineering teams to scale pipeline architectures, improving baseline data quality and user accessibility.</li>
-    </ul>
+
+    <!-- Dual Column Grid for Academic / Extra info -->
+    <div class="academic-grid">
+      <div class="academic-card">
+        <h2>Education</h2>
+        <div style="margin-top: 10px;">
+          <h3 style="font-size: 13.5px;">Georgia Institute of Technology</h3>
+          <p>MSc. in Analytics &bull; Jan 2022</p>
+          <p style="font-style: italic; font-size: 12px; margin-top: 4px;">ETL Developer & Analytics Concentration</p>
+        </div>
+        <div style="margin-top: 12px;">
+          <h3 style="font-size: 13.5px;">San Jose State University</h3>
+          <p>BSc. in Chemical Engineering &bull; May 2019</p>
+          <p style="font-style: italic; font-size: 12px; margin-top: 4px;">Minor in Computer Science</p>
+        </div>
+      </div>
+
+      <div class="academic-card">
+        <h2>Certifications</h2>
+        <ul style="list-style-type: none; padding-left: 0; margin-top: 10px; font-size: 13px;">
+          <li style="margin-bottom: 8px;"><strong>MIT Professional Education</strong><br><span style="color: var(--text-muted); font-size: 12px;">Data Engineering (Mar 2025)</span></li>
+          <li style="margin-bottom: 8px;"><strong>DataExpert.io Bootcamp</strong><br><span style="color: var(--text-muted); font-size: 12px;">Analytics Engineering (Feb 2024)</span></li>
+          <li style="margin-bottom: 0;"><strong>Springboard Bootcamp</strong><br><span style="color: var(--text-muted); font-size: 12px;">Data Science (Mar 2023)</span></li>
+        </ul>
+      </div>
+    </div>
+
   </div>
-
-  <h2>Education</h2>
-  <ul>
-    <li><strong>MSc. in Analytics (ETL Developer and Analytics Concentration)</strong> | Georgia Institute of Technology | <em>January 2022</em></li>
-    <li><strong>BSc. in Chemical Engineering (Minor in Computer Science)</strong> | San Jose State University | <em>May 2019</em></li>
-  </ul>
-
-  <h2>Certifications</h2>
-  <ul>
-    <li><strong>Professional Certificate in Data Engineering</strong> – Massachusetts Institute of Technology (<em>Mar 2025</em>)</li>
-    <li><strong>Data Engineer Bootcamp (Specializing in Analytics)</strong> – Via DataExpert.io (<em>Feb 2024</em>)</li>
-    <li><strong>Data Science Bootcamp</strong> – Via Springboard (<em>Mar 2023</em>)</li>
-  </ul>
 
 </body>
 </html>
