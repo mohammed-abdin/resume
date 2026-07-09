@@ -1,3 +1,6 @@
+---
+render_with_liquid: false
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +8,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohammed Abdin - Resume</title>
   <style>
-    /* Reset & Standard Page Settings */
-    * {
-      box-sizing: border-box;
+    /* Absolute Reset to prevent layout drift */
+    html, body, div, h1, h2, h3, p, ul, li {
       margin: 0;
       padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
     }
+    
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       line-height: 1.5;
@@ -21,7 +28,7 @@
       padding: 40px 20px;
     }
 
-    /* Minimalist Header */
+    /* Traditional Minimal Header */
     .header-container {
       text-align: center;
       margin-bottom: 25px;
@@ -45,7 +52,7 @@
       color: #555555;
     }
 
-    /* Clean, Simple Download Link */
+    /* Clean Download Link Box */
     .btn-container {
       text-align: center;
       margin-bottom: 30px;
@@ -57,7 +64,7 @@
       text-decoration: none;
       font-size: 13px;
       font-weight: 600;
-      padding: 6px 12px;
+      padding: 8px 16px;
       border: 1px solid #dddddd;
       border-radius: 4px;
       background-color: #fafafa;
@@ -68,7 +75,7 @@
       border-color: #232f3e;
     }
 
-    /* Traditional Section Dividers */
+    /* Traditional Section Divider Accents */
     h2 {
       font-size: 14px;
       font-weight: 700;
@@ -87,9 +94,9 @@
       text-align: justify;
     }
 
-    /* Experience Blocks */
+    /* Experience Grid Structures */
     .job-block {
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
     .job-header {
       display: flex;
@@ -105,6 +112,7 @@
     .job-location {
       font-size: 13px;
       color: #555555;
+      font-weight: 500;
     }
     .job-meta {
       font-size: 13px;
@@ -113,20 +121,24 @@
       margin-bottom: 6px;
     }
 
-    /* Crisp Lists & Metrics */
+    /* Bullet Alignments */
     ul {
       font-size: 13.5px;
-      padding-left: 18px;
+      padding-left: 20px;
       color: #333333;
+      list-style-type: disc;
+      margin-bottom: 15px;
     }
     li {
-      margin-bottom: 4px;
+      margin-bottom: 5px;
+      line-height: 1.5;
     }
     strong {
       color: #111111;
+      font-weight: 600;
     }
 
-    /* Responsive */
+    /* Adaptive Mobile Sizing */
     @media (max-width: 600px) {
       body {
         padding: 20px 15px;
@@ -137,6 +149,7 @@
       }
       .job-location {
         margin-top: 1px;
+        margin-bottom: 2px;
       }
     }
   </style>
@@ -163,9 +176,9 @@
 
   <h2>Technical Skills</h2>
   <ul>
-    <li style="margin-bottom: 6px;"><strong>Business Intelligence & Analytics:</strong> Tableau, Power BI, Looker Studio, Streamlit, Executive Dashboards, Command Centers, Key Performance Indicators (KPIs), Variance Tracking, Statistical Analysis (Black Belt Six Sigma), Risk and Operational Mitigation Modeling.</li>[cite: 1]
-    <li style="margin-bottom: 6px;"><strong>Data Engineering & Architecture:</strong> SQL and Database Programming, Data Warehousing (AWS Redshift, Snowflake, Databricks), Medallion Architecture (Bronze, Silver, Gold stages), Dimensional Data Modeling (Star and Snowflake Schemas), ETL and ELT Pipeline Design (DBT, AWS Glue, Spark, PySpark), Data Quality, Governance, Scripting Languages (Python, Shell, Git).</li>[cite: 1]
-    <li style="margin-bottom: 6px;"><strong>Productivity & AI Tools:</strong> Claude Code, Agentic Coding Workflows, Prompt Engineering, Automated Unit Testing, CI/CD Deployment Pipelines.</li>
+    <li><strong>Business Intelligence & Analytics:</strong> Tableau, Power BI, Looker Studio, Streamlit, Executive Dashboards, Command Centers, Key Performance Indicators (KPIs), Variance Tracking, Statistical Analysis (Black Belt Six Sigma), Risk and Operational Mitigation Modeling.</li>[cite: 1]
+    <li><strong>Data Engineering & Architecture:</strong> SQL and Database Programming, Data Warehousing (AWS Redshift, Snowflake, Databricks), Medallion Architecture (Bronze, Silver, Gold stages), Dimensional Data Modeling (Star and Snowflake Schemas), ETL and ELT Pipeline Design (DBT, AWS Glue, Spark, PySpark), Data Quality, Governance, Scripting Languages (Python, Shell, Git).</li>[cite: 1]
+    <li><strong>Productivity & AI Tools:</strong> Claude Code, Agentic Coding Workflows, Prompt Engineering, Automated Unit Testing, CI/CD Deployment Pipelines.</li>
   </ul>
 
   <h2>Professional Experience</h2>
@@ -225,7 +238,7 @@
     <p class="job-meta">Junior Data Engineer | July 2019 to May 2020</p>[cite: 1]
     <ul>
       <li>Automated data integration workflows to increase transaction tracking efficiency by 25%, empowering teams to accurately track operational trends.</li>[cite: 1]
-      <li>Audited source databases to mitigate data quality issues, leading to a 30% drop in reporting inconsistencies.</li>[cite: 1]
+      <li>Audited source databases to mitigate data quality issues, leading to a 30% drop in reporting inconsistencies.</li>
       <li>Developed and maintained Snowflake data models to support data warehouse and analytical reporting, enhancing data accessibility by 20%.</li>[cite: 1]
     </ul>
   </div>
