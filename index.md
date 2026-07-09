@@ -1,7 +1,7 @@
 <div style="font-family: 'Segoe UI', Helvetica, Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.5;">
 
 <div style="text-align: center; margin-bottom: 30px;">
-  <h1 style="color: #232f3e; margin-bottom: 5px; font-size: 28px;">M. Mohammed A. Abdin</h1>
+  <h1 style="color: #232f3e; margin-bottom: 5px; font-size: 28px;">Mohammed Abdin</h1>
   <p style="font-weight: bold; color: #555; margin: 0 0 10px 0;">Senior Business Intelligence Engineer</p>
   <p style="font-size: 14px; color: #666; margin: 0;">San Jose, CA | +1(408) 834-6864 | moh.yasser27@gmail.com</p>
 </div>
